@@ -1,0 +1,569 @@
+==18797== Memcheck, a memory error detector.
+==18797== Copyright (C) 2002-2007, and GNU GPL'd, by Julian Seward et al.
+==18797== Using LibVEX rev 1804, a library for dynamic binary translation.
+==18797== Copyright (C) 2004-2007, and GNU GPL'd, by OpenWorks LLP.
+==18797== Using valgrind-3.3.0-Debian, a dynamic binary instrumentation framework.
+==18797== Copyright (C) 2000-2007, and GNU GPL'd, by Julian Seward et al.
+==18797== For more details, rerun with: -v
+==18797== 
+==18797== My PID = 18797, parent PID = 18796.  Prog and args are:
+==18797==    ./gpstool
+==18797==    -info
+==18797== 
+==18797== Source and destination overlap in strncpy(0x5D9D3F7, 0x5D9D3F7, 1)
+==18797==    at 0x4C25230: strncpy (mc_replace_strmem.c:291)
+==18797==    by 0x406BAE: sortDateFormat (gputil.c:2094)
+==18797==    by 0x40141E: readGpFile (gputil.c:137)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Conditional jump or move depends on uninitialised value(s)
+==18797==    at 0x4C23F68: strlen (mc_replace_strmem.c:242)
+==18797==    by 0x4071B8: getID (gputil.c:2268)
+==18797==    by 0x402544: scanGpWaypt (gputil.c:625)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x40735F: getWord (gputil.c:2311)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de29 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x407385: getWord (gputil.c:2315)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de32 is 9 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23DA1: index (mc_replace_strmem.c:160)
+==18797==    by 0x40224A: scanGpWaypt (gputil.c:532)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de29 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23DB4: index (mc_replace_strmem.c:160)
+==18797==    by 0x40224A: scanGpWaypt (gputil.c:532)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de2a is 1 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x5495990: rawmemchr (in /lib/libc-2.7.so)
+==18797==    by 0x5489679: (within /lib/libc-2.7.so)
+==18797==    by 0x547DC84: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x40227C: scanGpWaypt (gputil.c:537)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de29 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C242F4: rawmemchr (mc_replace_strmem.c:585)
+==18797==    by 0x5489679: (within /lib/libc-2.7.so)
+==18797==    by 0x547DC84: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x40227C: scanGpWaypt (gputil.c:537)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de2a is 1 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x546B498: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x40227C: scanGpWaypt (gputil.c:537)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de29 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x5487C4E: _IO_sputbackc (in /lib/libc-2.7.so)
+==18797==    by 0x546B5B7: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x40227C: scanGpWaypt (gputil.c:537)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de29 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x546C07A: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x40227C: scanGpWaypt (gputil.c:537)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de29 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x546DD6E: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x40227C: scanGpWaypt (gputil.c:537)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de2a is 1 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x40735F: getWord (gputil.c:2311)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de61 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x407385: getWord (gputil.c:2315)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de6b is 10 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23DA1: index (mc_replace_strmem.c:160)
+==18797==    by 0x402498: scanGpWaypt (gputil.c:601)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de61 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23DB4: index (mc_replace_strmem.c:160)
+==18797==    by 0x402498: scanGpWaypt (gputil.c:601)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de62 is 1 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x546B498: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x4024CB: scanGpWaypt (gputil.c:606)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de61 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x546C07A: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x4024CB: scanGpWaypt (gputil.c:606)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de61 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x546EBB1: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x4024CB: scanGpWaypt (gputil.c:606)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de62 is 1 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x546DD6E: _IO_vfscanf (in /lib/libc-2.7.so)
+==18797==    by 0x547DC94: vsscanf (in /lib/libc-2.7.so)
+==18797==    by 0x54788D7: sscanf (in /lib/libc-2.7.so)
+==18797==    by 0x4024CB: scanGpWaypt (gputil.c:606)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9de63 is 2 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402390: scanGpWaypt (gputil.c:576)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Conditional jump or move depends on uninitialised value(s)
+==18797==    at 0x4C24767: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x40717F: getID (gputil.c:2258)
+==18797==    by 0x40284E: scanGpWaypt (gputil.c:748)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x4C2478A: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x40717F: getID (gputil.c:2258)
+==18797==    by 0x40284E: scanGpWaypt (gputil.c:748)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9dea3 is 0 bytes after a block of size 11 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x4070EE: getID (gputil.c:2252)
+==18797==    by 0x40284E: scanGpWaypt (gputil.c:748)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23F64: strlen (mc_replace_strmem.c:242)
+==18797==    by 0x4071B8: getID (gputil.c:2268)
+==18797==    by 0x40284E: scanGpWaypt (gputil.c:748)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9dea3 is 0 bytes after a block of size 11 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x4070EE: getID (gputil.c:2252)
+==18797==    by 0x40284E: scanGpWaypt (gputil.c:748)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x407385: getWord (gputil.c:2315)
+==18797==    by 0x402600: scanGpWaypt (gputil.c:656)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9df19 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402600: scanGpWaypt (gputil.c:656)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23F64: strlen (mc_replace_strmem.c:242)
+==18797==    by 0x402624: scanGpWaypt (gputil.c:664)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9df19 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402600: scanGpWaypt (gputil.c:656)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Conditional jump or move depends on uninitialised value(s)
+==18797==    at 0x4C24767: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x40717F: getID (gputil.c:2258)
+==18797==    by 0x402544: scanGpWaypt (gputil.c:625)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x4C2478A: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x40717F: getID (gputil.c:2258)
+==18797==    by 0x402544: scanGpWaypt (gputil.c:625)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9e2cf is 0 bytes after a block of size 7 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x4070EE: getID (gputil.c:2252)
+==18797==    by 0x402544: scanGpWaypt (gputil.c:625)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23F64: strlen (mc_replace_strmem.c:242)
+==18797==    by 0x4071B8: getID (gputil.c:2268)
+==18797==    by 0x402544: scanGpWaypt (gputil.c:625)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5d9e2cf is 0 bytes after a block of size 7 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x4070EE: getID (gputil.c:2252)
+==18797==    by 0x402544: scanGpWaypt (gputil.c:625)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x40735F: getWord (gputil.c:2311)
+==18797==    by 0x402B41: scanGpRoute (gputil.c:843)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5db9949 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402B41: scanGpRoute (gputil.c:843)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x407385: getWord (gputil.c:2315)
+==18797==    by 0x402B41: scanGpRoute (gputil.c:843)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5db994a is 1 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402B41: scanGpRoute (gputil.c:843)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23F64: strlen (mc_replace_strmem.c:242)
+==18797==    by 0x402BB7: scanGpRoute (gputil.c:852)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5db9949 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402B41: scanGpRoute (gputil.c:843)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x402B7D: scanGpRoute (gputil.c:853)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5db9949 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402B41: scanGpRoute (gputil.c:843)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x544E464: (within /lib/libc-2.7.so)
+==18797==    by 0x544B9AF: atoi (in /lib/libc-2.7.so)
+==18797==    by 0x402BD0: scanGpRoute (gputil.c:861)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5db9949 is 0 bytes after a block of size 1 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x402B41: scanGpRoute (gputil.c:843)
+==18797==    by 0x401B73: readGpFile (gputil.c:309)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Conditional jump or move depends on uninitialised value(s)
+==18797==    at 0x4C23F68: strlen (mc_replace_strmem.c:242)
+==18797==    by 0x4071B8: getID (gputil.c:2268)
+==18797==    by 0x402E27: scanGpLeg (gputil.c:934)
+==18797==    by 0x401A4A: readGpFile (gputil.c:297)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Conditional jump or move depends on uninitialised value(s)
+==18797==    at 0x4C24767: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x40717F: getID (gputil.c:2258)
+==18797==    by 0x402E27: scanGpLeg (gputil.c:934)
+==18797==    by 0x401A4A: readGpFile (gputil.c:297)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x4C2478A: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x40717F: getID (gputil.c:2258)
+==18797==    by 0x402E27: scanGpLeg (gputil.c:934)
+==18797==    by 0x401A4A: readGpFile (gputil.c:297)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dbad3f is 0 bytes after a block of size 7 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x4070EE: getID (gputil.c:2252)
+==18797==    by 0x402E27: scanGpLeg (gputil.c:934)
+==18797==    by 0x401A4A: readGpFile (gputil.c:297)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x4C23F64: strlen (mc_replace_strmem.c:242)
+==18797==    by 0x4071B8: getID (gputil.c:2268)
+==18797==    by 0x402E27: scanGpLeg (gputil.c:934)
+==18797==    by 0x401A4A: readGpFile (gputil.c:297)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dbad3f is 0 bytes after a block of size 7 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x4070EE: getID (gputil.c:2252)
+==18797==    by 0x402E27: scanGpLeg (gputil.c:934)
+==18797==    by 0x401A4A: readGpFile (gputil.c:297)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x4C2478A: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x403D8E: scanGpTrkpt (gputil.c:1328)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dc6be1 is 0 bytes after a block of size 17 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x403D2B: scanGpTrkpt (gputil.c:1324)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x4C24777: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x403D9E: scanGpTrkpt (gputil.c:1329)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dc6969 is 0 bytes after a block of size 9 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x403092: scanGpTrkpt (gputil.c:1005)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid write of size 1
+==18797==    at 0x4C2478A: strcat (mc_replace_strmem.c:186)
+==18797==    by 0x403D9E: scanGpTrkpt (gputil.c:1329)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dc6971 is 8 bytes after a block of size 9 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x403092: scanGpTrkpt (gputil.c:1005)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x54A941C: (within /lib/libc-2.7.so)
+==18797==    by 0x403DB5: scanGpTrkpt (gputil.c:1331)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dc6969 is 0 bytes after a block of size 9 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x403092: scanGpTrkpt (gputil.c:1005)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x54A9548: (within /lib/libc-2.7.so)
+==18797==    by 0x403DB5: scanGpTrkpt (gputil.c:1331)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dc696a is 1 bytes after a block of size 9 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x403092: scanGpTrkpt (gputil.c:1005)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== Invalid read of size 1
+==18797==    at 0x54A93CD: (within /lib/libc-2.7.so)
+==18797==    by 0x403DB5: scanGpTrkpt (gputil.c:1331)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797==  Address 0x5dc696b is 2 bytes after a block of size 9 alloc'd
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x403092: scanGpTrkpt (gputil.c:1005)
+==18797==    by 0x401D07: readGpFile (gputil.c:346)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== ERROR SUMMARY: 7681 errors from 43 contexts (suppressed: 8 from 1)
+==18797== malloc/free: in use at exit: 1,114 bytes in 247 blocks.
+==18797== malloc/free: 5,001 allocs, 4,754 frees, 1,042,816 bytes allocated.
+==18797== For counts of detected errors, rerun with: -v
+==18797== searching for pointers to 247 not-freed blocks.
+==18797== checked 1,419,944 bytes.
+==18797== 
+==18797== 
+==18797== 10 bytes in 1 blocks are definitely lost in loss record 1 of 5
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x40653B: initializeFilep (gputil.c:1918)
+==18797==    by 0x4012C6: readGpFile (gputil.c:87)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== 
+==18797== 48 bytes in 3 blocks are definitely lost in loss record 2 of 5
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x404299: getGpTracks (gputil.c:1412)
+==18797==    by 0x4083B7: gpsInfo (gpstool.c:274)
+==18797==    by 0x407CE1: main (gpstool.c:109)
+==18797== 
+==18797== 
+==18797== 48 bytes in 3 blocks are definitely lost in loss record 3 of 5
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x404265: getGpTracks (gputil.c:1410)
+==18797==    by 0x4083B7: gpsInfo (gpstool.c:274)
+==18797==    by 0x407CE1: main (gpstool.c:109)
+==18797== 
+==18797== 
+==18797== 144 bytes in 144 blocks are definitely lost in loss record 4 of 5
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x407310: getWord (gputil.c:2307)
+==18797==    by 0x4021D5: scanGpWaypt (gputil.c:522)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== 
+==18797== 864 bytes in 96 blocks are definitely lost in loss record 5 of 5
+==18797==    at 0x4C22FAB: malloc (vg_replace_malloc.c:207)
+==18797==    by 0x4070EE: getID (gputil.c:2252)
+==18797==    by 0x402544: scanGpWaypt (gputil.c:625)
+==18797==    by 0x4018CB: readGpFile (gputil.c:276)
+==18797==    by 0x407C70: main (gpstool.c:100)
+==18797== 
+==18797== LEAK SUMMARY:
+==18797==    definitely lost: 1,114 bytes in 247 blocks.
+==18797==      possibly lost: 0 bytes in 0 blocks.
+==18797==    still reachable: 0 bytes in 0 blocks.
+==18797==         suppressed: 0 bytes in 0 blocks.

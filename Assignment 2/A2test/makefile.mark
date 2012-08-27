@@ -1,0 +1,62 @@
+# makefile.mark for A2
+# [3/2/10] fix for "Makefile" instead of makefile, no gputil.o produced
+# This template needs to be adapted for a given assignment
+
+# exception.h/c & mark.h should always be drawn from the automarker home
+# (override with AM=... arg to make)
+AM = .
+VPATH = $(AM)
+
+# define NDEBUG to disable assertions in case student used them
+# define GOLD to generate gold_gpReadFile() in gold_gputil.c
+# -lm needed by mark.h macro
+# -L. and -lstudent link in libstudent.a
+CC = gcc
+CFLAGS = -Wall -std=c99 -DNDEBUG -DGOLD -I$(AM) -g
+LDFLAGS = -lm -L. -lstudent
+
+# Adapt object files for the assignment
+MARKER = mark.o exception.o util.o negutil.o
+SUITES = a2-suite1.o a2-suite2.o a2-suite3.o a2-suite4.o a2-suite5.o a2-suite6.o gold_gputil.o
+TESTING = libstudent.a
+
+mark: $(TESTING) $(MARKER) $(SUITES)
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+# one entry for each object file, listing all the source files it
+# depends on; these will be compiled using CC & CFLAGS
+#
+# These should be OK as is
+mark.o: mark.c mark.h exception.h
+
+exception.o: exception.c exception.h
+
+# These need to be customized for the assignment
+util.o: util.c util.h gputil.h
+
+negutil.o: negutil.c negutil.h gputil.h
+
+# If the tester has been released, we will leave gold_gputil.obj in
+# the directory, so just copy that to .o. If there's no .obj, then
+# should be able to compile it from accessible =gold_gputil.c
+gold_gputil.o: gold_gputil.obj
+	cp $^ $@
+
+gold_gputil.obj:
+	$(CC) $(CFLAGS) -o $@ -c =gold_gputil.c
+
+# Compile student's gpstool using their makefile, first deleting any
+# other .o's. Explicitly compile gputil.o because their makefile may
+# not leave the .o file. Then, recompile gpstool suppressing their main(),
+# and capture student's .o's in library for linking with marker.
+# We also substitute their call to qsort with a call to our dummy entry.
+libstudent.a:
+	rm -f *.o
+	make gpstool
+	make gputil.o
+	$(CC) $(CFLAGS) -Dmain=DONTCALL -Dqsort=catch_qsort -c gpstool.c
+	ar rcv $@ *.o
+
+
+clean:
+	rm -f mark *.o *.a gpstool

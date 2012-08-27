@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kwok/!svn/ver/59/trunk/CIS2750/Assignment%201
+END
+test
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/kwok/!svn/ver/35/trunk/CIS2750/Assignment%201/test
+END
+test.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/kwok/!svn/ver/35/trunk/CIS2750/Assignment%201/test.c
+END
+GPS-Test.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kwok/!svn/ver/35/trunk/CIS2750/Assignment%201/GPS-Test.txt
+END
+main
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/kwok/!svn/ver/55/trunk/CIS2750/Assignment%201/main
+END
+gputil.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kwok/!svn/ver/55/trunk/CIS2750/Assignment%201/gputil.c
+END
+GPS-Test2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kwok/!svn/ver/35/trunk/CIS2750/Assignment%201/GPS-Test2.txt
+END
+gpstest.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kwok/!svn/ver/43/trunk/CIS2750/Assignment%201/gpstest.txt
+END
+testwrite.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kwok/!svn/ver/55/trunk/CIS2750/Assignment%201/testwrite.txt
+END
+gputil.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kwok/!svn/ver/45/trunk/CIS2750/Assignment%201/gputil.h
+END
+gputilmain.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kwok/!svn/ver/41/trunk/CIS2750/Assignment%201/gputilmain.c
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kwok/!svn/ver/35/trunk/CIS2750/Assignment%201/makefile
+END
+testfile.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kwok/!svn/ver/55/trunk/CIS2750/Assignment%201/testfile.txt
+END
+pledge.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kwok/!svn/ver/35/trunk/CIS2750/Assignment%201/pledge.txt
+END

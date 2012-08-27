@@ -1,0 +1,81 @@
+H SOFTWARE NAME & VERSION
+I GPSU
+
+S DateFormat=dd/mmm/yyyy
+S Timezone=+01:00
+S Units=K,H
+
+H R DATUM
+M E               WGS 84 100  0.0000000E+00  0.0000000E+00 0 0 0
+
+H COORDINATE SYSTEM
+U  LAT LON DEG
+
+F ID---- Latitude   Longitude    T O Comment
+W BASE   N28.752755 W013.827385  I E BASE CAMP                               
+W BEACH  N28.741512 W013.828320  I E SANDY BEACH                             
+W BRISPL N28.743115 W013.870373  I E BRISTOL PLAYA                           
+W BROW   N28.746738 W013.826557  I E BROW OF HILL                            
+W BUSSTN N28.739638 W013.871323  I E BUS STATION                             
+W CORHBR N28.740653 W013.862515  I E CORRALEJO HARBOUR                       
+W DIVE1  N28.740980 W013.835307  I E DIVE1                                   
+W DIVE2  N28.743115 W013.833793  I E DIVE 1                                  
+W DUNASC N28.743255 W013.864747  I E DUNAS CLUB                              
+W ECTOWR N28.680105 W014.010272  I E EC TOWER                                
+W FARO   N28.765157 W013.814958  I E LIGHT HOUSE                             
+W FORK   N28.740217 W013.822628  I E FORK IN PATH                            
+W FUEAPT N28.452992 W013.869273  I E AIRPORT                                 
+W GREENL N28.740325 W013.861318  I E HARBOUR GREEN                           
+W GULLEY N28.748045 W013.815060  I E GULLEY                                  
+W HUTS   N28.756420 W013.816767  I E DESERTED HUTS                           
+W INTERS N28.750660 W013.823050  I E INTERSECTION                            
+W MARINA N28.741210 W013.865598  I E MARINA                                  
+W MOLINS N28.544932 W014.065375  I E WINDMILL                                
+W MUELLE N28.736862 W013.823057  I E EL MUELLE                               
+W PDRHBR N28.495392 W013.858163  I E PDR HARBOUR                             
+W PLAYA  N28.742537 W013.826120  I E PLAYA                                   
+W POST   N28.738700 W013.820223  I E POST IN GROUND                          
+W RESTAU N28.738410 W013.818118  I E RESTAURANT                              
+W SUMMIT N28.751595 W013.832257  I E SUMMIT                                  
+W TREASR N28.752628 W013.819435  I E BURIED TREASURE                         
+W VPOINT N28.759425 W013.820352  I E VIEWPOINT                               
+W WRECK  N28.755162 W013.832655  I E SUNKEN WRECK                            
+
+R 1 MUELLE - FARO       
+F ID----
+W MUELLE
+W POST  
+W RESTAU
+W GULLEY
+W HUTS  
+W FARO  
+
+R 2 FARO - SUMMIT       
+F ID----
+W FARO  
+W VPOINT
+W INTERS
+W BASE  
+W SUMMIT
+
+R 3 SUMMIT - MUELLE     
+F ID----
+W SUMMIT
+W BASE  
+W INTERS
+W BROW  
+W PLAYA 
+W FORK  
+W MUELLE
+
+R 4 FUEAPT - GREENL     
+F ID----
+W FUEAPT
+W PDRHBR
+W BUSSTN
+W BRISPL
+W DUNASC
+W MARINA
+W CORHBR
+W GREENL
+
